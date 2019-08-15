@@ -181,6 +181,7 @@ type SelectTemplates struct {
 // the command prompt or it has received a valid value. It will return the value and an error if any
 // occurred during the select's execution.
 func (s *Select) Run() (int, string, error) {
+	ClearScreen()
 	return s.RunCursorAt(0, 0)
 }
 
@@ -520,6 +521,7 @@ type SelectWithAdd struct {
 // Otherwise, it will return the index and the value of the selected item. In any case, if an error is triggered, it
 // will also return the error as its third return value.
 func (sa *SelectWithAdd) Run() (int, string, error) {
+	ClearScreen()
 	if len(sa.Items) > 0 {
 		newItems := append([]string{sa.AddLabel}, sa.Items...)
 

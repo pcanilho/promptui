@@ -110,6 +110,7 @@ type PromptTemplates struct {
 // Run will keep the prompt alive until it has been canceled from the command prompt or it has received a valid
 // value. It will return the value and an error if any occurred during the prompt's execution.
 func (p *Prompt) Run() (string, error) {
+	ClearScreen()
 	var err error
 
 	err = p.prepareTemplates()

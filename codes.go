@@ -120,3 +120,8 @@ func Styler(attrs ...attribute) func(interface{}) string {
 		return fmt.Sprintf("%s%sm%v%s", esc, seq, v, end)
 	}
 }
+
+
+func ClearScreen() {
+	fmt.Println("\033[H")
+}
